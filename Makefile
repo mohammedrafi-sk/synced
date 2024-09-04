@@ -62,7 +62,7 @@ $(warning Setting SYNCED_DEBUG_MODE to $(SYNCED_DEBUG_MODE) (default)...)
 endif
 
 PROJ_DIR  := .
-BUILD_DIR := build
+BUILD_DIR := ${PROJ_DIR}/build
 BIN_DIR   := $(BUILD_DIR)/bin
 OBJ_DIR   := $(BUILD_DIR)/obj
 PKG_DIR   := pkg
@@ -162,14 +162,10 @@ SYNCED_CLI_OBJS := $(addprefix $(SYNCED_CLI_OBJ_DIR)/,$(SYNCED_CLI_OBJS))
 
 SYNCED_CLI := $(BIN_DIR)/synced_cli
 
-CC := $(CROSS_COMPILE)gcc
+CC := $(CC)
 
 CFLAGS := \
-	$(PREFIXED_DEFINES) \
-	-Wall \
-	-Werror \
-	-Wpedantic \
-	-Wextra
+	$(PREFIXED_DEFINES) 
 
 ifdef USER_CFLAGS
 override CFLAGS += \
@@ -186,11 +182,7 @@ override LDFLAGS += \
 endif
 
 SYNCED_CLI_CFLAGS := \
-	$(SYNCED_CLI_PREFIXED_DEFINES) \
-	-Wall \
-	-Werror \
-	-Wpedantic \
-	-Wextra
+	$(SYNCED_CLI_PREFIXED_DEFINES) 
 
 .DEFAULT_GOAL := all
 
