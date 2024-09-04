@@ -61,7 +61,7 @@ override SYNCED_DEBUG_MODE := 0
 $(warning Setting SYNCED_DEBUG_MODE to $(SYNCED_DEBUG_MODE) (default)...)
 endif
 
-PROJ_DIR  := .
+PROJ_DIR  := ${S}
 BUILD_DIR := ${PROJ_DIR}/build
 BIN_DIR   := $(BUILD_DIR)/bin
 OBJ_DIR   := $(BUILD_DIR)/obj
