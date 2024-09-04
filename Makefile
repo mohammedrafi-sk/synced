@@ -110,7 +110,6 @@ MONITOR_SRC_FILES := $(shell find $(MONITOR_DIR) -name "*.c")
 SYNCED_FILE := synced.c
 
 INCS := \
-	$(PROJ_DIR) \
 	$(COMMON_DIR) \
 	$(CONTROL_DIR) \
 	$(DEVICE_ADAPTOR_DIR) \
